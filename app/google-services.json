@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "248340710225",
+    "project_id": "fir-5100c",
+    "storage_bucket": "fir-5100c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248340710225:android:1541ebeb2dba72c46d0970",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248340710225-rnvr6g48i907bm4o3hmqokga2u18sbv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf3ryCw_og-0L80uKyX8KmwxA-e9n3FRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248340710225-rnvr6g48i907bm4o3hmqokga2u18sbv9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
