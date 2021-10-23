@@ -46,7 +46,9 @@ public class LogIn extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LogIn.this, "Sesión iniciada", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(LogIn.this, Principal.class));
+                                Toast.makeText(LogIn.this, "Sesión iniciada con éxito", Toast.LENGTH_SHORT).show();
+                                finish();
                             } else {
                                 Toast.makeText(LogIn.this, "Algo salió mal. Intenta de nuevo", Toast.LENGTH_SHORT).show();
                             }
