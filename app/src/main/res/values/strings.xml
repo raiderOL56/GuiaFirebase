@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Firebase</string>
+    <string name="selecciona_una_opci_n">Selecciona una opción</string>
+    <string name="registrate">¡Regístrate!</string>
+    <string name="o">Ó</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="nombre_s">Nombre(s)</string>
+    <string name="apellido_paterno">Apellido paterno</string>
+    <string name="apellido_materno">Apellido materno</string>
+    <string name="edad">Edad</string>
+    <string name="correoelectronico">Correo electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="registrarme">Registrarme</string>
 </resources>
