@@ -36,15 +36,15 @@ public class SignUp extends AppCompatActivity {
     // FIREBASE DATABASE
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
-    // TODO: 1.- Crear loadingBar
+    // TODO: BORRAR loadingBar
     private ProgressDialog loadingBar;
 
-//****************************** ON CREATE ******************************
+//****************************** ON CREATE ************gi******************
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        // TODO: 1.- Crear loadingBar
+        // TODO: BORRAR loadingBar
         loadingBar = new ProgressDialog(this);
 
         signUp_eTXTnombre = findViewById(R.id.signUp_eTXTnombre);
@@ -155,6 +155,19 @@ public class SignUp extends AppCompatActivity {
         // FINs EVENTO del BTNlogIn
     }
 //****************************** FIN ON CREATE ******************************
+
+//****************************** ON START ******************************
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser currenUser = mAuth.getCurrentUser();
+        if (currenUser != null) {
+            startActivity(new Intent(SignUp.this, Principal.class));
+            finish();
+        }
+    }
+//****************************** FIN ON START ******************************
 
 //****************************** MÉTODOS ******************************
     // MÉTODO para llenar Spinner
