@@ -1,9 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Principal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/logotipo"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/registrate"
+                    android:textColor="@color/purple_500"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/principal_BTNshow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn"
+                        android:text="@string/mostrar_datos"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/principal_BTNupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn"
+                        android:text="@string/actualizar_datos"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/principal_BTNdelete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn"
+                        android:text="@string/eliminar_informacion"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/white"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/o"
+                                    android:textSize="20dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:textColor="@color/white"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/white"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"/>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/principal_BTNsignOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn"
+                            android:text="@string/cerrar_sesion"
+                            app:backgroundTint="@null" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
