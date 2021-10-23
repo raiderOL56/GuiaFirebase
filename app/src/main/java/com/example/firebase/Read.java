@@ -45,7 +45,7 @@ public class Read extends AppCompatActivity {
                     read_TXTgenero.setText(snapshot.child(mAuth.getUid()).child("genero").getValue().toString());
                     read_TXTemail.setText(mAuth.getCurrentUser().getEmail());
                 } else {
-                    Toast.makeText(Read.this, "No existe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Read.this, "No existe ese usuario", Toast.LENGTH_SHORT).show();
                 }
             }
 
