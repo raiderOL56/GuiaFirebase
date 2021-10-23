@@ -57,18 +57,6 @@ public class SignUp extends AppCompatActivity {
         signUp_BTNregistrarme = findViewById(R.id.signUp_BTNregistrarme);
         signUp_BTNlogIn = findViewById(R.id.signUp_BTNlogIn);
 
-        // Ejecutar BTNregistrarme al momento de dar enter
-        signUp_eTXTpassword.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                    signUp_BTNregistrarme.callOnClick();
-                }
-                return false;
-            }
-        });
-        // FIN Ejecutar BTNregistrarme al momento de dar enter
-
         // EVENTO del BTNregistrarme
         signUp_BTNregistrarme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +80,8 @@ public class SignUp extends AppCompatActivity {
                             // Validar que se haya realizado correctamente el sign up
                             if (task.isSuccessful()) { // Sign up correcto
                                 // Registrar datos en la BD
-                                mDatabase.child("Usuarios");
                                 User datosUsuario = new User(nombre, apellidoP, apellidoM, edad, genero, email);
-                                mDatabase.child(mAuth.getUid()).setValue(datosUsuario);
+                                mDatabase.child("Usuarios").child(mAuth.getUid()).setValue(datosUsuario);
                                 // FIN Registrar datos en la BD
 
                                 Toast.makeText(SignUp.this, "Has sido registrado exisosamente", Toast.LENGTH_SHORT).show();
@@ -102,7 +89,7 @@ public class SignUp extends AppCompatActivity {
                                 startActivity(new Intent(SignUp.this, Principal.class));
                                 finish();
                             } else { // Sign up incorrecto
-                                Toast.makeText(SignUp.this, "Ha ocurrido un error. Por favor vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUp.this, "Ha ocurrido un error1. Por favor vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
                             }
                             // FIN Validar que se haya realizado correctamente el sign up
                         }
