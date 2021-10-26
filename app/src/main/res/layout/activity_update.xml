@@ -1,9 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Update">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/logotipo"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update"
+                    android:textColor="@color/purple_500"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/update_eTXTnombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/edit_text"
+                        android:hint="@string/nombre_s"
+                        android:inputType="textPersonName|textCapWords"
+                        android:imeOptions="actionGo"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textIsSelectable="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/update_eTXTapellidoP"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="textPersonName|textCapWords"
+                            android:imeOptions="actionGo"
+                            android:background="@drawable/edit_text"
+                            android:layout_marginRight="5dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:hint="@string/apellido_paterno"
+                            android:textColorHint="@color/white"/>
+
+                        <EditText
+                            android:id="@+id/update_eTXTapellidoM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="textPersonName|textCapWords"
+                            android:imeOptions="actionGo"
+                            android:background="@drawable/edit_text"
+                            android:layout_marginLeft="5dp"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:hint="@string/apellido_materno"
+                            android:textColorHint="@color/white"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/update_eTXTedad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text"
+                            android:hint="@string/edad"
+                            android:imeOptions="actionGo"
+                            android:inputType="numberSigned"
+                            android:padding="10dp"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:layout_gravity="center"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/update_SWgenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genero"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="5dp"
+                        android:onClick="SwitchGenero"/>
+
+                    <Spinner
+                        android:id="@+id/update_SpinnerGenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text"
+                        android:visibility="gone"/>
+
+
+                    <Switch
+                        android:id="@+id/update_SWpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cambiar_contrasena"
+                        android:textColor="@color/white"
+                        android:onClick="SwitchPassword"/>
+
+                    <EditText
+                        android:id="@+id/update_eTXTpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/edit_text"
+                        android:hint="@string/contrasena_actual"
+                        android:inputType="textPassword"
+                        android:imeOptions="actionGo"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textIsSelectable="true"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/update_eTXTpasswordNew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/edit_text"
+                        android:hint="@string/nueva_contrasena"
+                        android:inputType="textPassword"
+                        android:imeOptions="actionGo"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textIsSelectable="true"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/update_BTNupdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sin_stroke"
+                        android:text="@string/actualizar_datos"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

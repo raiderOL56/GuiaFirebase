@@ -51,6 +51,7 @@ public class LogIn extends AppCompatActivity {
                                 finish();
                             } else {
                                 Toast.makeText(LogIn.this, "Algo salió mal. Intenta de nuevo", Toast.LENGTH_SHORT).show();
+                                logIn_eTXTpassword.setText("");
                             }
                         }
                     });

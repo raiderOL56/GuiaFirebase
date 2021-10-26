@@ -35,17 +35,11 @@ public class SignUp extends AppCompatActivity {
 
     // FIREBASE DATABASE
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-
-    // TODO: BORRAR loadingBar
-    private ProgressDialog loadingBar;
-
 //****************************** ON CREATE ************gi******************
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        // TODO: BORRAR loadingBar
-        loadingBar = new ProgressDialog(this);
 
         signUp_eTXTnombre = findViewById(R.id.signUp_eTXTnombre);
         signUp_eTXTapellidoP = findViewById(R.id.signUp_eTXTapellidoP);
