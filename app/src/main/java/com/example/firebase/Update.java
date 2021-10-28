@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Update extends AppCompatActivity {
-// TODO: 1.- Terminar de comentar los métodos, funciones, etc.
 
     // Elementos UI
     private EditText update_eTXTnombre, update_eTXTapellidoP, update_eTXTapellidoM, update_eTXTedad, update_eTXTpassword, update_eTXTpasswordNew;
