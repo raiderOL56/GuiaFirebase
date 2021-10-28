@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Update extends AppCompatActivity {
+// TODO: 1.- Terminar de comentar los métodos, funciones, etc.
 
     // Elementos UI
     private EditText update_eTXTnombre, update_eTXTapellidoP, update_eTXTapellidoM, update_eTXTedad, update_eTXTpassword, update_eTXTpasswordNew;
@@ -56,6 +57,7 @@ public class Update extends AppCompatActivity {
         update_eTXTpasswordNew = findViewById(R.id.update_eTXTpasswordNew);
         update_BTNupdate = findViewById(R.id.update_BTNupdate);
 
+        // EVENTO del BTN update
         update_BTNupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,17 +68,18 @@ public class Update extends AppCompatActivity {
                         , password = update_eTXTpassword.getText().toString().trim()
                         , passwordNew = update_eTXTpasswordNew.getText().toString().trim();
 
-                // TODO : Aquí me quedé. Terminé de validar todos los campos que estén llenos para hacer los cambios correspondientes. Update COMPLETO
-                if(SwitchPassword(v) == false && SwitchGenero(v) == false && nombre.isEmpty() && apellidoP.isEmpty() && apellidoM.isEmpty() && edad.isEmpty()) {
-                    System.out.println("Haz una modificación");
+                if(SwitchPassword(v) == false && SwitchGenero(v) == false && nombre.isEmpty() && apellidoP.isEmpty() && apellidoM.isEmpty() && edad.isEmpty()) { // Password inactivo y género inactivo y ningún campo modificado.
+                    Toast.makeText(Update.this, "Haz al menos una modificación.", Toast.LENGTH_SHORT).show();
                 } else { // Algún campo está modificado
-                    if ((SwitchPassword(v) == true && SwitchGenero(v) == false) && (nombre.isEmpty() && apellidoP.isEmpty() && apellidoM.isEmpty() && edad.isEmpty())) {
+                    if ((SwitchPassword(v) == true && SwitchGenero(v) == false) && (nombre.isEmpty() && apellidoP.isEmpty() && apellidoM.isEmpty() && edad.isEmpty())) { // (Password activo y género inactivo) y (algún campo modificado)
+                        Toast.makeText(Update.this, "Contraseña actualizada correctamente.", Toast.LENGTH_SHORT).show();
                         // Actualizar contraseña
                         UpdatePassword(password, passwordNew);
                     }
 
                     if (((SwitchPassword(v) == true && SwitchGenero(v) == false) && (!nombre.isEmpty() || !apellidoP.isEmpty() || !apellidoM.isEmpty() || !edad.isEmpty()))
-                            || (SwitchPassword(v) == true && SwitchGenero(v) == true)) {
+                            || (SwitchPassword(v) == true && SwitchGenero(v) == true)) { // (Password activo y género inactivo) y (algún campo modificado) o (Password activo y género activo)
+                        Toast.makeText(Update.this, "Contraseña y datos actualizados", Toast.LENGTH_SHORT).show();
                         // Actualizar información
                         UpdateChildren(nombre, apellidoP, apellidoM, edad);
 
@@ -86,7 +89,8 @@ public class Update extends AppCompatActivity {
 
                     if (((SwitchPassword(v) == false && SwitchGenero(v) == true) && (!nombre.isEmpty() || !apellidoP.isEmpty() || !apellidoM.isEmpty() || !edad.isEmpty()))
                             || ((SwitchPassword(v) == false && SwitchGenero(v) == true) && (nombre.isEmpty() && apellidoP.isEmpty() && apellidoM.isEmpty() && edad.isEmpty()))
-                            ||((SwitchPassword(v) == false && SwitchGenero(v) == false) && (!nombre.isEmpty() || !apellidoP.isEmpty() || !apellidoM.isEmpty() || !edad.isEmpty()))) {
+                            ||((SwitchPassword(v) == false && SwitchGenero(v) == false) && (!nombre.isEmpty() || !apellidoP.isEmpty() || !apellidoM.isEmpty() || !edad.isEmpty()))) { // ((Password activo y género activo) y (Algún campo modificado)) o ((Password inactivo y género activo) y (Ningún campo modificado)) o ((Password inactivo y genero inactivo) y (Algún campo modificado))
+
                         Toast.makeText(Update.this, "Datos actualizados correctamente.", Toast.LENGTH_SHORT).show();
 
                         // Actualizar información
@@ -99,6 +103,7 @@ public class Update extends AppCompatActivity {
                 }
             }
         });
+        // FIN EVENTO del BTN update
     }
 
 //****************************** MÉTODOS ******************************
@@ -126,13 +131,13 @@ public class Update extends AppCompatActivity {
     public boolean SwitchPassword(View view){
         if (update_SWpassword.isChecked()) { // Activado
             update_eTXTpassword.setVisibility(View.VISIBLE);
-            update_eTXTpassword.setText("");
             update_eTXTpasswordNew.setVisibility(View.VISIBLE);
-            update_eTXTpasswordNew.setText("");
             return true;
         } else { // Desactivado
             update_eTXTpassword.setVisibility(View.GONE);
+            update_eTXTpassword.setText("");
             update_eTXTpasswordNew.setVisibility(View.GONE);
+            update_eTXTpasswordNew.setText("");
             return false;
         }
     }
@@ -174,52 +179,41 @@ public class Update extends AppCompatActivity {
 
     // MÉTODO PARA CAMBIAR CONTRASEÑA
     public void UpdatePassword(String password, String passwordNew){
-        // Obtener email para validarlo en la reautenticación
-        mDatabase.child("email").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Comprobar que exista el email del usuario
-                if (snapshot.exists()) { // Se obtuvo el email
-                    String email = snapshot.getValue().toString();
-                    // Crear credencial con email y password
-                    AuthCredential authCredential = EmailAuthProvider.getCredential(email, password);
+        if (update_eTXTpassword.getText().toString().trim().isEmpty() && update_eTXTpasswordNew.getText().toString().trim().isEmpty()) { // Ambos vacíos
+            update_eTXTpassword.setError("Completa este campo");
+            update_eTXTpasswordNew.setError("Completa este campo");
+        } else if (update_eTXTpassword.getText().toString().trim().isEmpty()) { // Password vacío
+            update_eTXTpassword.setError("Completa este campo");
+        } else if (update_eTXTpasswordNew.getText().toString().trim().isEmpty()) { // PasswordNew vacío
+            update_eTXTpasswordNew.setError("Completa este campo");
+        } else {
+            // Crear credencial con email y password para reautenticar
+            AuthCredential authCredential = EmailAuthProvider.getCredential(mAuth.getCurrentUser().getEmail(), password);
 
-                    // Realizar la autenticación para validar que el email y password son correctos
-                    mAuth.getCurrentUser().reauthenticate(authCredential).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            // Comprobar si el email y password son correctos
-                            if (task.isSuccessful()) { // Email y password correctos
-                                // Actualizar contraseña
-                                mAuth.getCurrentUser().updatePassword(passwordNew);
+            // Realizar la autenticación para validar que el email y password son correctos
+            mAuth.getCurrentUser().reauthenticate(authCredential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    // Comprobar si el email y password son correctos
+                    if (task.isSuccessful()) { // Email y password correctos
+                        // Actualizar contraseña
+                        mAuth.getCurrentUser().updatePassword(passwordNew);
 
-                                Toast.makeText(Update.this, "Contraseña actualizada correctamente.", Toast.LENGTH_SHORT).show();
+                        // Cerrar sesión
+                        startActivity(new Intent(Update.this, SignUp.class));
+                        mAuth.signOut();
+                        finish();
 
-                                // Cerrar sesión
-                                mAuth.signOut();
-                                startActivity(new Intent(Update.this, SignUp.class));
-                                finish();
-                            } else { // Email o password incorrectos
-                                update_eTXTpassword.setError("Contraseña incorrecta.");
-                                update_eTXTpassword.setText("");
-                                update_eTXTpasswordNew.setText("");
-                            }
-                            // FIN Comprobar si el email y password son correctos
-                        }
-                    });
-                    // FIN Realizar la autenticación para validar que el email y password son correctos
-                } else { // No se obtuvo el email
-                    Toast.makeText(Update.this, "Lo sentimos, no pudimos verificar tu cuenta. Intenta nuevamente.", Toast.LENGTH_SHORT).show();
+                    } else { // Email o password incorrectos
+                        update_eTXTpassword.setError("Contraseña incorrecta.");
+                        update_eTXTpassword.setText("");
+                        update_eTXTpasswordNew.setText("");
+                    }
+                    // FIN Comprobar si el email y password son correctos
                 }
-                // FIN Comprobar que exista el email del usuario
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        // FIN Obtener email para validarlo en la reautenticación
+            });
+            // FIN Realizar la autenticación para validar que el email y password son correctos
+        }
     }
     // FIN MÉTODO PARA CAMBIAR CONTRASEÑA
 //****************************** FIN MÉTODOS ******************************
