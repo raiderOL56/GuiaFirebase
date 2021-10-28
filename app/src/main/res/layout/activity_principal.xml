@@ -48,7 +48,7 @@
                         android:id="@+id/principal_BTNshow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/btn"
+                        android:background="@drawable/btn_sin_stroke"
                         android:text="@string/mostrar_datos"
                         android:layout_marginVertical="10dp"
                         app:backgroundTint="@null" />
@@ -57,7 +57,7 @@
                         android:id="@+id/principal_BTNupdate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/btn"
+                        android:background="@drawable/btn_sin_stroke"
                         android:text="@string/actualizar_datos"
                         android:layout_marginVertical="10dp"
                         app:backgroundTint="@null" />
@@ -67,7 +67,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
-                        android:background="@drawable/btn"
+                        android:background="@drawable/btn_sin_stroke"
                         android:text="@string/agregar_amigo"
                         app:backgroundTint="@null" />
                 </LinearLayout>
