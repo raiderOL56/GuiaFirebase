@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/erick/OneDrive/MisProyectos/AndroidStudio/JAVA/Firebase/app/src/main/res/layout/activity_delete.xml" value="0.25" />
         <entry key="..\:/Users/erick/OneDrive/MisProyectos/AndroidStudio/JAVA/Firebase/app/src/main/res/layout/activity_principal.xml" value="0.25" />
         <entry key="..\:/Users/erick/OneDrive/MisProyectos/AndroidStudio/JAVA/Firebase/app/src/main/res/layout/activity_read.xml" value="0.1940222897669706" />
+        <entry key="..\:/Users/erick/OneDrive/MisProyectos/AndroidStudio/JAVA/Firebase/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/erick/OneDrive/MisProyectos/AndroidStudio/JAVA/Firebase/app/src/main/res/layout/activity_update.xml" value="0.25" />
       </map>
     </option>

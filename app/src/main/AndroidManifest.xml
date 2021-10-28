@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.firebase">
-
-<!--    PERMISOS A INTERNET-->
+    <!-- PERMISOS A INTERNET -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,20 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebase">
-        <activity android:name=".Delete"></activity>
+        <activity
+            android:name=".MisAmigos"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarAmigo"
+            android:exported="false" />
         <activity android:name=".Update" />
         <activity android:name=".Read" />
         <activity android:name=".Principal" />
         <activity android:name=".LogIn">
-<!--            <intent-filter>-->
-<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
-<!--                <action android:name="android.intent.action.MAIN"/>-->
-<!--            </intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".SignUp">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
     </application>
