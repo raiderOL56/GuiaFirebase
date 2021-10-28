@@ -13,7 +13,7 @@
     <string name="registrarme">Registrarme</string>
     <string name="mostrar_datos">Mostrar datos</string>
     <string name="actualizar_datos">Actualizar datos</string>
-    <string name="eliminar_informacion">Eliminar información</string>
+    <string name="eliminar_cuenta">Eliminar cuenta</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="cambiar_contrasena">Cambiar contraseña</string>
     <string name="contrasena_actual">Contraseña actual</string>
@@ -23,4 +23,5 @@
     <string name="update">Update</string>
     <string name="genero">Género</string>
     <string name="delete">Delete</string>
+    <string name="agregar_amigo">Agregar amigo</string>
 </resources>

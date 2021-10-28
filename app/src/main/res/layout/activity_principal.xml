@@ -63,12 +63,12 @@
                         app:backgroundTint="@null" />
 
                     <Button
-                        android:id="@+id/principal_BTNdelete"
+                        android:id="@+id/principal_BTNaddFriend"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/btn"
-                        android:text="@string/eliminar_informacion"
                         android:layout_marginVertical="10dp"
+                        android:background="@drawable/btn"
+                        android:text="@string/agregar_amigo"
                         app:backgroundTint="@null" />
                 </LinearLayout>
 
@@ -81,6 +81,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/principal_BTNsignOut"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn"
+                            android:text="@string/cerrar_sesion"
+                            app:backgroundTint="@null" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -121,11 +129,11 @@
                         </LinearLayout>
 
                         <Button
-                            android:id="@+id/principal_BTNsignOut"
+                            android:id="@+id/principal_BTNdelete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/btn"
-                            android:text="@string/cerrar_sesion"
+                            android:text="@string/eliminar_cuenta"
                             app:backgroundTint="@null" />
                     </LinearLayout>
                 </RelativeLayout>

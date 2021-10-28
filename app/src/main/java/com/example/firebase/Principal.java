@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Principal extends AppCompatActivity {
 
     // Elementos UI
-    private Button principal_BTNshow, principal_BTNupdate, principal_BTNdelete, principal_BTNsignOut;
+    private Button principal_BTNshow, principal_BTNupdate, principal_BTNaddFriend, principal_BTNsignOut;
 
     // FIREBASE
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -24,7 +24,7 @@ public class Principal extends AppCompatActivity {
 
         principal_BTNshow = findViewById(R.id.principal_BTNshow);
         principal_BTNupdate = findViewById(R.id.principal_BTNupdate);
-        principal_BTNdelete = findViewById(R.id.principal_BTNdelete);
+        principal_BTNaddFriend = findViewById(R.id.principal_BTNaddFriend);
         principal_BTNsignOut = findViewById(R.id.principal_BTNsignOut);
 
         principal_BTNshow.setOnClickListener(new View.OnClickListener() {
@@ -41,10 +41,10 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-        principal_BTNdelete.setOnClickListener(new View.OnClickListener() {
+        principal_BTNaddFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Principal.this, Delete.class));
+                startActivity(new Intent(Principal.this, AgregarAmigo.class));
             }
         });
 
