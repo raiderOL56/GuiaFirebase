@@ -24,4 +24,7 @@
     <string name="genero">Género</string>
     <string name="delete">Delete</string>
     <string name="agregar_amigo">Agregar amigo</string>
+    <string name="verifica_tu_contrasena">Verifica tu contraseña</string>
+    <string name="verificar">Verificar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

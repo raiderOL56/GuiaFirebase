@@ -34,7 +34,7 @@ public class Read extends AppCompatActivity {
         read_TXTgenero = findViewById(R.id.read_TXTgenero);
         read_TXTemail = findViewById(R.id.read_TXTemail);
 
-        mDatabase.child("Usuarios").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {

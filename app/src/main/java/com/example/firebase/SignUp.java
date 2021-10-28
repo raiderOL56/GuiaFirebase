@@ -35,7 +35,7 @@ public class SignUp extends AppCompatActivity {
 
     // FIREBASE DATABASE
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-//****************************** ON CREATE ************gi******************
+//****************************** ON CREATE ******************************
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
