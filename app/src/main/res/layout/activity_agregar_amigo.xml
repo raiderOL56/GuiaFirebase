@@ -43,47 +43,38 @@
                     android:layout_marginVertical="20dp"
                     android:orientation="vertical">
 
+                    <EditText
+                        android:id="@+id/addFriend_eTXTemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/edit_text"
+                        android:hint="@string/correoelectronico"
+                        android:inputType="textEmailAddress"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textIsSelectable="true"/>
+
+                    <Button
+                        android:id="@+id/addFriend_BTNsearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sin_stroke"
+                        android:text="@string/buscar"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null"/>
+
                     <TextView
                         android:id="@+id/addFriend_TXTnombre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:padding="10dp"
-                        android:background="@drawable/edit_text"
-                        android:textColor="@color/white"
-                        android:textSize="25dp"
+                        android:layout_marginVertical="15dp"
+                        android:text="@string/informacion"
+                        android:textColor="@color/purple_500"
+                        android:textSize="24dp"
+                        android:gravity="center"
                         android:visibility="gone"/>
-
-                    <LinearLayout
-                        android:id="@+id/addFriend_LLapellidos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/addFriend_TXTapellidoP"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            android:layout_marginRight="5dp"
-                            android:background="@drawable/edit_text"
-                            android:textColor="@color/white"
-                            android:textSize="25dp"/>
-
-                        <TextView
-                            android:id="@+id/addFriend_TXTapellidoM"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            android:layout_marginLeft="5dp"
-                            android:background="@drawable/edit_text"
-                            android:textColor="@color/white"
-                            android:textSize="25dp"/>
-                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/addFriend_LLedadgenero"
@@ -116,27 +107,17 @@
                             android:textSize="25dp"/>
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/addFriend_eTXTemail"
+                    <TextView
+                        android:id="@+id/addFriend_TXTemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:background="@drawable/edit_text"
-                        android:hint="@string/correoelectronico"
-                        android:inputType="textEmailAddress"
+                        android:layout_weight="1"
                         android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edit_text"
                         android:textColor="@color/white"
-                        android:textColorHint="@color/white"
-                        android:textIsSelectable="true"/>
-
-                    <Button
-                        android:id="@+id/addFriend_BTNsearch"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btn_sin_stroke"
-                        android:text="@string/buscar"
-                        android:layout_marginVertical="10dp"
-                        app:backgroundTint="@null"/>
+                        android:textSize="25dp"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@+id/addFriend_BTNadd"
