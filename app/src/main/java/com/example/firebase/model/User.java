@@ -18,9 +18,7 @@ public class User {
     }
 
     // 3.- Se crea getter and setter de los atributos
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
