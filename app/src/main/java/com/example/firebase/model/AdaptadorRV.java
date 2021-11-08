@@ -36,7 +36,11 @@ public class AdaptadorRV extends RecyclerView.Adapter<AdaptadorRV.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bindData(mData.get(position));
+        User usuario = mData.get(position);
+        holder.misAmigos_TXTvNombre.setText(usuario.getNombre() + " " + usuario.getApellidoP() + " " + usuario.getApellidoM());
+        holder.misAmigos_TXTvEmail.setText(usuario.getEmail());
+        holder.misAmigos_TXTvEdad.setText(usuario.getEdad());
+        holder.misAmigos_TXTvGenero.setText(usuario.getGenero());
     }
 
     @Override
@@ -44,23 +48,16 @@ public class AdaptadorRV extends RecyclerView.Adapter<AdaptadorRV.ViewHolder> {
         return mData.size();
     }
 
-    // 1.- Crear clase
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    // 1.- Crear clase ViewHolder
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView misAmigos_TXTvNombre, misAmigos_TXTvEmail, misAmigos_TXTvEdad, misAmigos_TXTvGenero;
 
-        ViewHolder(View itemView){
+        public ViewHolder(View itemView){
             super(itemView);
             misAmigos_TXTvNombre = itemView.findViewById(R.id.misAmigos_TXTvNombre);
             misAmigos_TXTvEmail = itemView.findViewById(R.id.misAmigos_TXTvEmail);
             misAmigos_TXTvEdad = itemView.findViewById(R.id.misAmigos_TXTvEdad);
             misAmigos_TXTvGenero = itemView.findViewById(R.id.misAmigos_TXTvGenero);
-        }
-
-        void bindData(final User item){
-            misAmigos_TXTvNombre.setText(item.getNombre() + " " + item.getApellidoP() + " " + item.getApellidoM());
-            misAmigos_TXTvEmail.setText(item.getEmail());
-            misAmigos_TXTvEdad.setText(item.getEdad());
-            misAmigos_TXTvGenero.setText(item.getGenero());
         }
     }
 }

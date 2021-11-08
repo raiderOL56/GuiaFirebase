@@ -1,9 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".AgregarAmigo">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/logotipo"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agregar_amigo"
+                    android:textColor="@color/purple_500"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/addFriend_eTXTemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@drawable/edit_text"
+                        android:hint="@string/correoelectronico"
+                        android:inputType="textEmailAddress"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textIsSelectable="true"/>
+
+                    <Button
+                        android:id="@+id/addFriend_BTNsearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sin_stroke"
+                        android:text="@string/buscar"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null"/>
+
+                    <TextView
+                        android:id="@+id/addFriend_TXTnombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:text="@string/informacion"
+                        android:textColor="@color/purple_500"
+                        android:textSize="24dp"
+                        android:gravity="center"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/addFriend_LLedadgenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/addFriend_TXTedad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/edit_text"
+                            android:textColor="@color/white"
+                            android:textSize="25dp"/>
+
+                        <TextView
+                            android:id="@+id/addFriend_TXTgenero"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/edit_text"
+                            android:textColor="@color/white"
+                            android:textSize="25dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/addFriend_TXTemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edit_text"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/addFriend_BTNadd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_sin_stroke"
+                        android:text="@string/agregar_amigo"
+                        android:layout_marginVertical="10dp"
+                        app:backgroundTint="@null"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="15dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/white"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/o"
+                                    android:textSize="20dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:textColor="@color/white"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/white"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"/>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/addFriend_BTNmyFriends"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn"
+                            android:text="@string/mis_amigos"
+                            app:backgroundTint="@null" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

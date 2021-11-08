@@ -34,6 +34,7 @@ public class Read extends AppCompatActivity {
         read_TXTgenero = findViewById(R.id.read_TXTgenero);
         read_TXTemail = findViewById(R.id.read_TXTemail);
 
+        // Obtener datos de mAuth.getUid
         mDatabase.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

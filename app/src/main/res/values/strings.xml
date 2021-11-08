@@ -28,4 +28,6 @@
     <string name="verificar">Verificar</string>
     <string name="cancelar">Cancelar</string>
     <string name="mis_amigos">Mis amigos</string>
+    <string name="buscar">Buscar</string>
+    <string name="informacion">Información</string>
 </resources>
