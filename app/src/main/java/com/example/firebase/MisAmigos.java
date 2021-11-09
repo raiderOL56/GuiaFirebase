@@ -51,7 +51,7 @@ public class MisAmigos extends AppCompatActivity {
                         User usuario = dataSnapshot.getValue(User.class);
                         // Agregar objeto a la lista
                         elements.add(usuario);
-                        // TODO: Ya se muestran los nombres en el RecyclerView. MisAmigos COMPLETO
+                        // TODO: Ya se muestran los nombres en el RecyclerView. MisAmigos COMPLETO.
                     }
                     // Actualizar adaptador para ver los cambios en el RecyclerView
                     adaptadorRV.notifyDataSetChanged();
