@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.firebase.model.AdaptadorRV;
 import com.example.firebase.model.User;
@@ -21,6 +24,8 @@ import java.util.List;
 
 public class MisAmigos extends AppCompatActivity {
 
+    private TextView misAmigos_TXTvNingunAmigo;
+
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Usuarios");
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private RecyclerView misAmigos_RV;
@@ -33,6 +38,7 @@ public class MisAmigos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_amigos);
 
+        misAmigos_TXTvNingunAmigo = findViewById(R.id.misAmigos_TXTvNingunAmigo);
         misAmigos_RV = findViewById(R.id.misAmigos_RV);
         misAmigos_RV.setLayoutManager(new LinearLayoutManager(this));
         adaptadorRV = new AdaptadorRV(elements, this);
@@ -43,6 +49,8 @@ public class MisAmigos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+                    misAmigos_RV.setVisibility(View.VISIBLE);
+                    misAmigos_TXTvNingunAmigo.setVisibility(View.GONE);
                     // Limpiar lista para evitar que se dupliquen los datos
                     elements.clear();
                     // elements.removeAll(elements); /*Esto elimina los datos de la lista para evitar que se dupliquen*/
@@ -54,6 +62,9 @@ public class MisAmigos extends AppCompatActivity {
                     }
                     // Actualizar adaptador para ver los cambios en el RecyclerView
                     adaptadorRV.notifyDataSetChanged();
+                } else {
+                    misAmigos_TXTvNingunAmigo.setVisibility(View.VISIBLE);
+                    misAmigos_RV.setVisibility(View.GONE);
                 }
             }
 

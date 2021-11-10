@@ -22,12 +22,20 @@
         android:textSize="30dp"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/misAmigos_TXTvNingunAmigo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_tienes_ningun_amigo_agregado"
+        android:textColor="@color/purple_500"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/misAmigos_RV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_margin="15dp"
+        android:visibility="gone"/>
 </LinearLayout>

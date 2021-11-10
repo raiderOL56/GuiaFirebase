@@ -152,7 +152,7 @@ public class AgregarAmigo extends AppCompatActivity {
                                         mDatabase.child(dataSnapshot.getKey()).child("misAmigos").child(mAuth.getUid()).child("genero").setValue(mySnapshot.child("genero").getValue());
                                         mDatabase.child(dataSnapshot.getKey()).child("misAmigos").child(mAuth.getUid()).child("email").setValue(mySnapshot.child("email").getValue());
 
-                                        Toast.makeText(AgregarAmigo.this, "Tu amigo ha sido agregado a tu lista de amigos.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(AgregarAmigo.this, "Usuario agregado a tu lista de amigos.", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(AgregarAmigo.this, Principal.class));
                                         finish();
                                     }
