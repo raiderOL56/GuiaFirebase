@@ -39,7 +39,7 @@ public class MisAmigos extends AppCompatActivity {
         misAmigos_RV.setAdapter(adaptadorRV);
 
         // Obtener valores de sus amigos
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        mDatabase.child(mAuth.getUid()).child("misAmigos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
@@ -51,7 +51,6 @@ public class MisAmigos extends AppCompatActivity {
                         User usuario = dataSnapshot.getValue(User.class);
                         // Agregar objeto a la lista
                         elements.add(usuario);
-                        // TODO: Ya se muestran los nombres en el RecyclerView. MisAmigos COMPLETO.
                     }
                     // Actualizar adaptador para ver los cambios en el RecyclerView
                     adaptadorRV.notifyDataSetChanged();

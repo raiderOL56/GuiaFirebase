@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebase">
-        <activity android:name=".MisAmigos" android:theme="@style/Theme.FirebaseActionBar"/>
+        <activity android:name=".MisAmigos"/>
         <activity android:name=".AgregarAmigo"/>
         <activity android:name=".Update" />
         <activity android:name=".Read" />

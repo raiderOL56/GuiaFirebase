@@ -84,7 +84,7 @@ public class SignUp extends AppCompatActivity {
                                 startActivity(new Intent(SignUp.this, Principal.class));
                                 finish();
                             } else { // Sign up incorrecto
-                                Toast.makeText(SignUp.this, "Ha ocurrido un error1. Por favor vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUp.this, "Ese correo electrónico ya está registrado", Toast.LENGTH_SHORT).show();
                             }
                             // FIN Validar que se haya realizado correctamente el sign up
                         }

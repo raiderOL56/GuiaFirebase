@@ -26,7 +26,7 @@ public class AgregarAmigo extends AppCompatActivity {
     private TextView addFriend_TXTnombre, addFriend_TXTedad, addFriend_TXTgenero, addFriend_TXTemail;
     private LinearLayout addFriend_LLedadgenero;
     private EditText addFriend_eTXTemail;
-    private Button addFriend_BTNsearch, addFriend_BTNadd, addFriend_BTNmyFriends;
+    private Button addFriend_BTNsearch, addFriend_BTNadd;
 
     // FIREBASE
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -46,7 +46,6 @@ public class AgregarAmigo extends AppCompatActivity {
         addFriend_TXTgenero = findViewById(R.id.addFriend_TXTgenero);
         addFriend_TXTemail = findViewById(R.id.addFriend_TXTemail);
         addFriend_BTNadd = findViewById(R.id.addFriend_BTNadd);
-        addFriend_BTNmyFriends = findViewById(R.id.addFriend_BTNmyFriends);
 
         // EVENTO para BTNbuscar
         addFriend_BTNsearch.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +151,10 @@ public class AgregarAmigo extends AppCompatActivity {
                                         mDatabase.child(dataSnapshot.getKey()).child("misAmigos").child(mAuth.getUid()).child("edad").setValue(mySnapshot.child("edad").getValue());
                                         mDatabase.child(dataSnapshot.getKey()).child("misAmigos").child(mAuth.getUid()).child("genero").setValue(mySnapshot.child("genero").getValue());
                                         mDatabase.child(dataSnapshot.getKey()).child("misAmigos").child(mAuth.getUid()).child("email").setValue(mySnapshot.child("email").getValue());
+
+                                        Toast.makeText(AgregarAmigo.this, "Tu amigo ha sido agregado a tu lista de amigos.", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(AgregarAmigo.this, Principal.class));
+                                        finish();
                                     }
                                     // FIN Validar si ya tiene agregado a ese usuario o no
                                 }
@@ -174,15 +177,6 @@ public class AgregarAmigo extends AppCompatActivity {
             }
         });
         // FIN EVENTO para BTNadd
-
-        // EVENTO para BTNmyFriends
-        addFriend_BTNmyFriends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AgregarAmigo.this, MisAmigos.class));
-            }
-        });
-        // FIN EVENTO para BTNmyFriends
     }
 //****************************** FIN ON CREATE ******************************
 
