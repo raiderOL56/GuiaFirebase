@@ -63,12 +63,12 @@
                         app:backgroundTint="@null" />
 
                     <Button
-                        android:id="@+id/principal_BTNaddFriend"
+                        android:id="@+id/principal_BTNmyFriends"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:background="@drawable/btn_sin_stroke"
-                        android:text="@string/agregar_amigo"
+                        android:text="@string/mis_amigos"
                         app:backgroundTint="@null" />
                 </LinearLayout>
 

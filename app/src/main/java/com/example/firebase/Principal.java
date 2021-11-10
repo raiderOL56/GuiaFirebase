@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Principal extends AppCompatActivity {
 
     // Elementos UI
-    private Button principal_BTNshow, principal_BTNupdate, principal_BTNaddFriend, principal_BTNsignOut, principal_BTNdeleteAccount;
+    private Button principal_BTNshow, principal_BTNupdate, principal_BTNmyFriends, principal_BTNsignOut, principal_BTNdeleteAccount;
 
     FirebaseUser mAuth = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -37,7 +37,7 @@ public class Principal extends AppCompatActivity {
 
         principal_BTNshow = findViewById(R.id.principal_BTNshow);
         principal_BTNupdate = findViewById(R.id.principal_BTNupdate);
-        principal_BTNaddFriend = findViewById(R.id.principal_BTNaddFriend);
+        principal_BTNmyFriends = findViewById(R.id.principal_BTNmyFriends);
         principal_BTNsignOut = findViewById(R.id.principal_BTNsignOut);
         principal_BTNdeleteAccount = findViewById(R.id.principal_BTNdeleteAccount);
 
@@ -58,10 +58,10 @@ public class Principal extends AppCompatActivity {
         });
 
         // EVENTO BTNaddFriend
-        principal_BTNaddFriend.setOnClickListener(new View.OnClickListener() {
+        principal_BTNmyFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Principal.this, AgregarAmigo.class));
+                startActivity(new Intent(Principal.this, MisAmigos.class));
             }
         });
 
