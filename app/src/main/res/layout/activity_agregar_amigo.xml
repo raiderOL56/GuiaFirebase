@@ -51,19 +51,20 @@
                         android:background="@drawable/edit_text"
                         android:hint="@string/correoelectronico"
                         android:inputType="textEmailAddress"
+                        android:minHeight="48dp"
                         android:padding="10dp"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
-                        android:textIsSelectable="true"/>
+                        android:textIsSelectable="true" />
 
                     <Button
                         android:id="@+id/addFriend_BTNsearch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
                         android:background="@drawable/btn_sin_stroke"
                         android:text="@string/buscar"
-                        android:layout_marginVertical="10dp"
-                        app:backgroundTint="@null"/>
+                        app:backgroundTint="@null" />
 
                     <TextView
                         android:id="@+id/addFriend_TXTnombre"
